@@ -21,8 +21,6 @@ This project covers the fundamentals of data processing and visualization using 
 It includes data collection, cleaning, transformation, and visualization, helping users understand key 
 data operations and best practices.
 
----
-
 ## <a id="installation"><u>Installation:</u></a>
 
 To run this project, you need to have Python installed on your system.
@@ -42,8 +40,6 @@ venv\Scripts\activate  # On Windows
 pip install -r requirements.txt
 ```
 
---- 
-
 ## <a id="project-structure"><u>Project Structure:</u></a>
 
 The project structure is as follows:
@@ -59,8 +55,6 @@ The project structure is as follows:
 │── 📜 requirements.txt        # Dependencies
 │── 📜 README.md               # Documentation (this file)
 ```
-
----
 
 ## <a id="data-processing-steps"><u>Data Processing steps:</u></a>
 
@@ -78,12 +72,19 @@ The data processing steps include:
 
 ### 1. <a id="data-collection"><u>Data Collection:</u></a>
 
-<u>Objective:</u> Retrieve datasets from various sources.
+##### <u>Objective:</u> Retrieve datasets from various sources.
 
-<u>Methods:</u>
+##### <u>Methods:</u>
+- Downloading datasets from the project documentation.
+- Uploading dataset from local storage.
+- Understanding the data structure and features with pandas functions.
+  - With the `head()` function, you can view the first few rows of the dataset.
+  - The `info()` function provides a summary of the dataset, including the number of non-null values and data types.
+  - The `shape` attribute returns the number of rows and columns in the dataset.
+  - The `describe()` function gives a statistical summary of the dataset, including the mean, standard deviation, and quartiles.
+  - The `dtypes` attribute returns the data types of each column in the dataset.
 
 
----
 
 ### 2. <a id="data-cleaning"><u>Data Cleaning:</u></a>
 
@@ -91,7 +92,6 @@ The data processing steps include:
 
 <u>Methods:</u>
 
----
 
 ### 3. <a id="data-transformation"><u>Data Transformation:</u></a>
 
@@ -99,7 +99,6 @@ The data processing steps include:
 
 <u>Methods:</u>
 
----
 
 ### 4. <a id="data-visualisation"><u>Data Visualisation:</u></a>
 
@@ -107,7 +106,6 @@ The data processing steps include:
 
 <u>Methods:</u>
 
----
 
 ## <a id="how-to-use-this-project"><u>How to use this project:</u></a>
 
@@ -136,5 +134,3 @@ Open the relevant notebook and start analyzing the data.
 ---
 
 ## <a id="conclusion"><u>Conclusion:</u></a>
-
----
