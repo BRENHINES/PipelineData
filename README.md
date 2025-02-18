@@ -1,16 +1,16 @@
-# <u>Data fundamentals Project:</u> Data Pipeline in Python
+# <u>Data fundamentals Project :</u> Data Pipeline in Python
 
-## <u>Table of contents:</u>
+## <u>Table of contents :</u>
 
 - [Introduction](#introduction)
 - [Installation](#installation)
-- [Project Structure](#project structure)
-- [Data Processing steps](#data processing steps)
-  - [Data Collection](#data collection)
-  - [Data Cleaning](#data cleaning)
-  - [Data Transformation](#data transformation)
-  - [Data Viualisation](#data visualisation)
-- [How to use this project](#how to use this project)
+- [Project Structure](#project-structure)
+- [Data Processing steps](#data-processing-steps)
+  - [Data Collection](#data-collection)
+  - [Data Cleaning](#data-cleaning)
+  - [Data Transformation](#data-transformation)
+  - [Data Viualisation](#data-visualisation)
+- [How to use this project](#how-to-use-this-project)
 - [Conclusion](#conclusion)
 
 ---
@@ -44,7 +44,7 @@ pip install -r requirements.txt
 
 --- 
 
-## <a id="project structure"><u>Project Structure:</u></a>
+## <a id="project-structure"><u>Project Structure:</u></a>
 
 The project structure is as follows:
 
@@ -62,7 +62,7 @@ The project structure is as follows:
 
 ---
 
-## <a id="data processing steps"><u>Data Processing steps:</u></a>
+## <a id="data-processing-steps"><u>Data Processing steps:</u></a>
 
 Each step is crucial for effective data processing:
 
@@ -76,7 +76,7 @@ Each step is crucial for effective data processing:
 
 The data processing steps include:
 
-### 1. <a id="data collection"><u>Data Collection:</u></a>
+### 1. <a id="data-collection"><u>Data Collection:</u></a>
 
 <u>Objective:</u> Retrieve datasets from various sources.
 
@@ -85,7 +85,7 @@ The data processing steps include:
 
 ---
 
-### 2. <a id="data cleaning"><u>Data Cleaning:</u></a>
+### 2. <a id="data-cleaning"><u>Data Cleaning:</u></a>
 
 <u>Objective:</u> Ensure data quality by handling missing, duplicate, or inconsistent values. Remove inconsistencies and errors from the data.
 
@@ -93,7 +93,7 @@ The data processing steps include:
 
 ---
 
-### 3. <a id="data transformation"><u>Data Transformation:</u></a>
+### 3. <a id="data-transformation"><u>Data Transformation:</u></a>
 
 <u>Objective:</u> Convert data into a more suitable format for analysis. Prepare data for analysis by encoding categorical variables, normalizing numerical data, and creating new features.
 
@@ -101,7 +101,7 @@ The data processing steps include:
 
 ---
 
-### 4. <a id="data visualisation"><u>Data Visualisation:</u></a>
+### 4. <a id="data-visualisation"><u>Data Visualisation:</u></a>
 
 <u>Objective:</u> Represent data in an interpretable way. Create visualizations to explore the data and communicate insights.
 
@@ -109,7 +109,7 @@ The data processing steps include:
 
 ---
 
-## <a id="how to use this project"><u>How to use this project:</u></a>
+## <a id="how-to-use-this-project"><u>How to use this project:</u></a>
 
 To use this project, follow these steps:
 
