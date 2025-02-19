@@ -92,6 +92,94 @@ The data processing steps include:
 
 <u>Methods:</u>
 
+#### 2.1. <u>Handling Missing Values:</u>
+The first step in data cleaning is to handle missing values. Missing values can occur for a variety of reasons, 
+such as data entry errors, equipment malfunctions, or data corruption. It is essential to identify and handle missing 
+values to ensure the quality of the data and the accuracy of the analysis.
+Looking at the result of the .info() function, we can easily say that there are no missing values.
+However, it is always a good idea to check for missing values explicitly using the .isnull() function.
+
+```bash
+#   Column                   Non-Null Count  Dtype  
+---  ------                   --------------  -----  
+ 0   ClientID                 1000 non-null   object 
+ 1   Nom                      1000 non-null   object 
+ 2   Prénom                   1000 non-null   object 
+ 3   Email                    1000 non-null   object 
+ 4   Téléphone                1000 non-null   object 
+ 5   Adresse                  1000 non-null   object 
+ 6   Ville                    1000 non-null   object 
+ 7   CodePostal               1000 non-null   int64  
+ 8   Pays                     1000 non-null   object 
+ 9   DateNaissance            1000 non-null   object 
+ 10  Âge                      1000 non-null   int64  
+ 11  Sexe                     1000 non-null   object 
+ 12  NuméroCarteCrédit        1000 non-null   int64  
+ 13  TypeCarteCrédit          1000 non-null   object 
+ 14  DateExpirationCarte      1000 non-null   object 
+ 15  SoldeCompte              1000 non-null   float64
+ 16  TypeClient               1000 non-null   object 
+ 17  NombreAchats             1000 non-null   int64  
+ 18  MontantTotalAchats       1000 non-null   float64
+ 19  DernierAchat             1000 non-null   object 
+ 20  ProduitPréféré           1000 non-null   object 
+ 21  CatégorieProduitPréféré  1000 non-null   object 
+ 22  FréquenceAchatMensuel    1000 non-null   int64  
+ 23  PanierMoyen              1000 non-null   float64
+ 24  ScoreFidélité            1000 non-null   int64  
+ 25  NombreRemboursements     1000 non-null   int64  
+ 26  MontantTotalRemboursé    1000 non-null   float64
+ 27  AvisClient               1000 non-null   object 
+ 28  AbonnementNewsletter     1000 non-null   bool   
+ 29  TypePaiementFavori       1000 non-null   object 
+ 30  StatutCompte             1000 non-null   object 
+```
+
+#### 2.2. <u>Handling Duplicate Values:</u>
+The next step in data cleaning is to handle duplicate values. Duplicate values can occur when the same data is entered
+multiple times or when data is collected from multiple sources. It is essential to identify and remove duplicate values
+to ensure the quality of the data and the accuracy of the analysis.
+But in the analysis of the data, we can see that there are no duplicate values.
+
+```python
+print(f"The number of duplicates in the dataset is : {dataset.duplicated().sum()}")
+```
+
+```bash
+The number of duplicates in the dataset is : 0
+```
+
+If the result was greater than 0 in your dataset, we can remove the duplicates using the .drop_duplicates() function, and then check 
+again if there are any duplicates.
+
+```python
+dataset = dataset.drop_duplicates() # to remove the duplicates from the dataset
+print(f"The dataset shape after removing duplicates is : {dataset.shape}") #to see the new shape of the dataset after removing duplicates
+```
+
+#### 2.3. <u>Correcting errors:</u>
+Fortunately, there are no errors in the dataset. However, if there were errors, we could correct them using the .replace() function.
+But in this case, we will not need to correct any errors. but first of all we verify if there are any errors in the dataset by verifying the unique values of come critical columns.
+
+```python
+columns_to_verify = ['Sexe', 'CatégorieProduitPréféré', 'AvisClient', 'AbonnementNewsletter', 'TypePaiementFavori', 'StatutCompte'] #to see the columns that we want to verify
+
+for col in columns_to_verify:
+    print(f"\n🔹 {col} : {dataset[col].nunique()} unique values") #to see the number of unique values in each column of the dataset
+    print(dataset[col].unique())  # to see the unique values in each column of the dataset
+```
+
+#### 2.4. <u>Standardizing data:</u>
+Standardizing data is the process of transforming data into a common format to make it easier to compare and analyze.
+Normally, we should standardize the data by encoding categorical variables and normalizing numerical data as for countries and cities 
+names which have to be capitalize or rounding float and the date format etc .
+In the countries and cities names all the first lettre are already capitalize, so we don't need to standardize them.
+but for the others columns we need to standardize them.
+
+In this dataset, we have to standardize the following columns:
+- date
+- countries and cities names
+- float numbers
 
 ### 3. <a id="data-transformation"><u>Data Transformation:</u></a>
 
