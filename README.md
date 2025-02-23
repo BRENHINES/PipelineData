@@ -181,6 +181,32 @@ In this dataset, we have to standardize the following columns:
 - countries and cities names
 - float numbers
 
+#### 2.5. <u>Handling Outliers:</u>
+In this dataset, we have to handle the outliers in the PanierMoyen column. We can use the IQR method to detect and remove the outliers.
+
+```python
+#%%
+# Quartiles and IQR for outliers detection
+Q1 = dataset['PanierMoyen'].quantile(0.25)
+Q3 = dataset['PanierMoyen'].quantile(0.75)
+IQR = Q3 - Q1
+
+# bounds definition for outliers detection
+lower_bound = Q1 - 1.5 * IQR
+upper_bound = Q3 + 1.5 * IQR
+
+# outliers identification
+outliers = dataset[(dataset['PanierMoyen'] < lower_bound) | (dataset['PanierMoyen'] > upper_bound)]
+print(f"Outliers numbers find : {len(outliers)}")
+display(outliers)
+```
+
+Fortunately, there are no outliers in the dataset.
+NB: I use to search for outliers in the PanierMoyen column because it's the combination of two analysis factors which are MontantTotalAchat et NombreAchats.
+Those two factors are very important in the analysis of the dataset because if we only referred to the MontantTotalAchat column, we could have outliers in the dataset.
+However, we have an customer with 9055.95 (the 86th row) as MontantTotalAchat, but this value is not an outlier because this customer has made 19 purchases.
+So it's normal to have this amount.
+
 ### 3. <a id="data-transformation"><u>Data Transformation:</u></a>
 
 <u>Objective:</u> Convert data into a more suitable format for analysis. Prepare data for analysis by encoding categorical variables, normalizing numerical data, and creating new features.
