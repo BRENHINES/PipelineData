@@ -9,7 +9,7 @@
   - [Data Collection](#data-collection)
   - [Data Cleaning](#data-cleaning)
   - [Data Transformation](#data-transformation)
-  - [Data Viualisation](#data-visualisation)
+  - [Data Visualisation](#data-visualisation)
 - [How to use this project](#how-to-use-this-project)
 - [Conclusion](#conclusion)
 
@@ -172,7 +172,7 @@ for col in columns_to_verify:
 #### 2.4. <u>Standardizing data:</u>
 Standardizing data is the process of transforming data into a common format to make it easier to compare and analyze.
 Normally, we should standardize the data by encoding categorical variables and normalizing numerical data as for countries and cities 
-names which have to be capitalize or rounding float and the date format etc .
+names which have to be capitalized or rounding float and the date format etc .
 In the countries and cities names all the first lettre are already capitalize, so we don't need to standardize them.
 but for the others columns we need to standardize them.
 
@@ -185,7 +185,6 @@ In this dataset, we have to standardize the following columns:
 In this dataset, we have to handle the outliers in the PanierMoyen column. We can use the IQR method to detect and remove the outliers.
 
 ```python
-#%%
 # Quartiles and IQR for outliers detection
 Q1 = dataset['PanierMoyen'].quantile(0.25)
 Q3 = dataset['PanierMoyen'].quantile(0.75)
@@ -204,8 +203,12 @@ display(outliers)
 Fortunately, there are no outliers in the dataset.
 NB: I use to search for outliers in the PanierMoyen column because it's the combination of two analysis factors which are MontantTotalAchat et NombreAchats.
 Those two factors are very important in the analysis of the dataset because if we only referred to the MontantTotalAchat column, we could have outliers in the dataset.
-However, we have an customer with 9055.95 (the 86th row) as MontantTotalAchat, but this value is not an outlier because this customer has made 19 purchases.
+However, we have a customer with 9055.95 (the 86th row) as MontantTotalAchat, but this value is not an outlier because this customer has made 19 purchases.
 So it's normal to have this amount.
+
+#### 2.6. <u>Standardizing data types:</u>
+In this dataset, we have to standardize the data types of the date columns to datetime and the float columns to int. We did it to facilitate the analysis of the dataset.
+In this dataset we standardize the dateNaissance and the DernierAchat columns to datetime and the SoldeCompte, MontantTotalAchats, PanierMoyen, MontantTotalRemboursé columns to int.
 
 ### 3. <a id="data-transformation"><u>Data Transformation:</u></a>
 
@@ -213,8 +216,58 @@ So it's normal to have this amount.
 
 <u>Methods:</u>
 
+#### 3.1. <u>Anonymisation:</u>
+Anonymisation is the process of removing or modifying personal data to prevent the identification of individuals.
+In this dataset, we have to anonymize the following columns:
+- Nom
+- Prénom
+- Email
+- Adresse
+- Téléphone
 
-### 4. <a id="data-visualisation"><u>Data Visualisation:</u></a>
+To anonymize those columns, we used the hashlib library to hash the values of the columns. but we could use the faker library instead.
+We used the hashlib library because it's more secure than the faker library for nom, prénom, email columns, and for others columns we only used string replacement.
+
+#### 3.2. <u>Pseudonymization:</u>
+Pseudonymization is the process of replacing personal data with pseudonyms to prevent the identification of individuals.
+In this dataset, we have to pseudonymize the following columns:
+- NuméroCarteCrédit
+- DateExpirationCarte
+- CodePostal
+
+To pseudonymize those columns, we simply used functions with strings replacement.
+
+#### 3.3. <u>Aggregation:</u>
+Aggregation is the process of combining data to create summary statistics or new features. And we used it on the age column to create age groups.
+So we group the ages into 7 groups:
+- 0-18
+- 19-25
+- 26-35
+- 36-45
+- 46-55
+- 56-65
+- 65+
+
+#### 3.4. <u>Data Reduction:</u>
+Data reduction is the process of reducing the size of the dataset while preserving its integrity and quality.
+In this dataset, we have to reduce the size of the dataset by removing the columns that are not useful for the analysis.
+So we removed the following columns:
+- Nom
+- Prénom
+- Email
+- Téléphone
+- Adresse
+- CodePostal
+- DateNaissance
+- NuméroCarteCrédit
+- DateExpirationCarte
+
+### 5. <a id="data-validation"><u>Data Validation:</u></a>
+
+<u>Objective:</u> 
+Validate the data to ensure its accuracy and reliability. Check for inconsistencies and errors in the data after all the cleaning and transformation process.
+
+### 5. <a id="data-visualisation"><u>Data Visualisation:</u></a>
 
 <u>Objective:</u> Represent data in an interpretable way. Create visualizations to explore the data and communicate insights.
 

@@ -48,6 +48,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.jupyter.core.jupyter.connections.configuration.JupyterServerConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -71,6 +72,8 @@
       <workItem from="1739887565645" duration="114000" />
       <workItem from="1739887691492" duration="14397000" />
       <workItem from="1739961660053" duration="16103000" />
+      <workItem from="1740220722642" duration="11830000" />
+      <workItem from="1740271208060" duration="7838000" />
     </task>
     <servers />
   </component>
