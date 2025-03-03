@@ -7,7 +7,6 @@
     <list default="true" id="d37c08ba-abd2-42df-8384-0a9efc67bbf5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Main.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,8 +54,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PY-243.22562.220" />
-        <option value="bundled-python-sdk-0fc6c617c4bd-9a18a617cbe4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.22562.220" />
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-PY-243.24978.54" />
+        <option value="bundled-python-sdk-91e3b7efe1d4-466328ff949b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.24978.54" />
       </set>
     </attachedChunks>
   </component>
@@ -73,7 +72,11 @@
       <workItem from="1739887691492" duration="14397000" />
       <workItem from="1739961660053" duration="16103000" />
       <workItem from="1740220722642" duration="11830000" />
-      <workItem from="1740271208060" duration="7838000" />
+      <workItem from="1740271208060" duration="18705000" />
+      <workItem from="1740474900571" duration="1378000" />
+      <workItem from="1740688741766" duration="2052000" />
+      <workItem from="1741008918809" duration="142000" />
+      <workItem from="1741009074108" duration="8255000" />
     </task>
     <servers />
   </component>
