@@ -9,7 +9,6 @@
   - [Data Collection](#data-collection)
   - [Data Cleaning](#data-cleaning)
   - [Data Transformation](#data-transformation)
-  - [Data Visualisation](#data-visualisation)
 - [How to use this project](#how-to-use-this-project)
 - [Conclusion](#conclusion)
 
@@ -34,9 +33,10 @@ Alternatively, you can create a virtual environment to keep dependencies isolate
 
 ```python
 python -m venv venv
-source venv/bin/activate  # On macOS/Linux
 
+source venv/bin/activate  # On macOS/Linux
 venv\Scripts\activate  # On Windows
+
 pip install -r requirements.txt
 ```
 
@@ -88,9 +88,9 @@ The data processing steps include:
 
 ### 2. <a id="data-cleaning"><u>Data Cleaning:</u></a>
 
-<u>Objective:</u> Ensure data quality by handling missing, duplicate, or inconsistent values. Remove inconsistencies and errors from the data.
+##### <u>Objective:</u> Ensure data quality by handling missing, duplicate, or inconsistent values. Remove inconsistencies and errors from the data.
 
-<u>Methods:</u>
+##### <u>Methods:</u>
 
 #### 2.1. <u>Handling Missing Values:</u>
 The first step in data cleaning is to handle missing values. Missing values can occur for a variety of reasons, 
@@ -212,9 +212,9 @@ In this dataset we standardize the dateNaissance and the DernierAchat columns to
 
 ### 3. <a id="data-transformation"><u>Data Transformation:</u></a>
 
-<u>Objective:</u> Convert data into a more suitable format for analysis. Prepare data for analysis by encoding categorical variables, normalizing numerical data, and creating new features.
+##### <u>Objective:</u> Convert data into a more suitable format for analysis. Prepare data for analysis by encoding categorical variables, normalizing numerical data, and creating new features.
 
-<u>Methods:</u>
+##### <u>Methods:</u>
 
 #### 3.1. <u>Anonymisation:</u>
 Anonymisation is the process of removing or modifying personal data to prevent the identification of individuals.
@@ -264,15 +264,8 @@ So we removed the following columns:
 
 ### 5. <a id="data-validation"><u>Data Validation:</u></a>
 
-<u>Objective:</u> 
+##### <u>Objective:</u> 
 Validate the data to ensure its accuracy and reliability. Check for inconsistencies and errors in the data after all the cleaning and transformation process.
-
-### 5. <a id="data-visualisation"><u>Data Visualisation:</u></a>
-
-<u>Objective:</u> Represent data in an interpretable way. Create visualizations to explore the data and communicate insights.
-
-<u>Methods:</u>
-
 
 ## <a id="how-to-use-this-project"><u>How to use this project:</u></a>
 

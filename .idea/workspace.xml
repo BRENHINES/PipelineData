@@ -7,6 +7,7 @@
     <list default="true" id="d37c08ba-abd2-42df-8384-0a9efc67bbf5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Main.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +25,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/BRENHINES/PipelineData.git&quot;,
+    &quot;url&quot;: &quot;https://Brenhines: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@github.com/BRENHINES/PipelineData.git&quot;,
     &quot;accountId&quot;: &quot;16edb8c1-adab-41d2-8bb9-7a2c01e9b4e5&quot;
   }
 }</component>
@@ -76,7 +77,9 @@
       <workItem from="1740474900571" duration="1378000" />
       <workItem from="1740688741766" duration="2052000" />
       <workItem from="1741008918809" duration="142000" />
-      <workItem from="1741009074108" duration="8255000" />
+      <workItem from="1741009074108" duration="14032000" />
+      <workItem from="1741099108742" duration="2897000" />
+      <workItem from="1741133097597" duration="11838000" />
     </task>
     <servers />
   </component>
