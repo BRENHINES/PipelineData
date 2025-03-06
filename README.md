@@ -261,6 +261,20 @@ So we removed the following columns:
 - DateNaissance
 - NuméroCarteCrédit
 - DateExpirationCarte
+- SoldeCompte
+
+And we reduce the size of the dataset from 31 columns to 21 columns. But the lines reduction is on the dataset is on the cleaning step with the following :
+```python
+dataset = dataset[dataset['MontantTotalRemboursé'] <= dataset['MontantTotalAchats']]
+```
+
+#### 3.5. <u>Data Addition:</u>
+Data addition is the process of adding new features to the dataset to enhance the analysis.
+In this dataset, we have to add the following columns:
+- Taux de remboursement
+- Montant total depensé
+- the customer with at least 5 buys
+- Customer category
 
 ### 5. <a id="data-validation"><u>Data Validation:</u></a>
 
