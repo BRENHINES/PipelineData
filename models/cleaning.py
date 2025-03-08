@@ -37,7 +37,7 @@ dataset.loc[(dataset['PanierMoyen'] == 0) & (dataset['MontantTotalAchats'] > 0),
 dataset.loc[(dataset['MontantTotalAchats'] == 0) & (dataset['PanierMoyen'] > 0), 'PanierMoyen'] = 0
 
 # Suppression des enregistrements invalides
-df = dataset[dataset['MontantTotalRemboursé'] <= dataset['MontantTotalAchats']]
+dataset = dataset[dataset['MontantTotalRemboursé'] <= dataset['MontantTotalAchats']]
 
 
 def standardise_date(date):
@@ -64,50 +64,50 @@ def standardise_date(date):
 # Standardisation des colonnes numériques (arrondi à 2 décimales)
 columns_to_round = ['MontantTotalAchats', 'SoldeCompte', 'PanierMoyen', 'MontantTotalRemboursé']
 for col in columns_to_round:
-    if col in df.columns:
-        df[col] = df[col].apply(lambda x: round(x, 2) if pd.notna(x) else x)
+    if col in dataset.columns:
+        dataset[col] = dataset[col].apply(lambda x: round(x, 2) if pd.notna(x) else x)
 
-sys.stderr.write("✅ Standardisation des valeurs numériques effectuée.\n")
+sys.stderr.write("Standardisation des valeurs numériques effectuée.\n")
 
 # Standardisation des colonnes textuelles (`Pays`, `Ville`)
 standardize_name_columns = ['Pays', 'Ville']
 for col in standardize_name_columns:
-    if col in df.columns:
-        df[col] = df[col].str.title()  # Convertir en format standard (Ex: "france" → "France")
+    if col in dataset.columns:
+        dataset[col] = dataset[col].str.title()  # Convertir en format standard (Ex: "france" → "France")
 
-sys.stderr.write("✅ Standardisation des noms de pays et villes effectuée.\n")
+sys.stderr.write("Standardisation des noms de pays et villes effectuée.\n")
 
 # Standardisation des dates (`DateNaissance`, `DernierAchat`, `DateExpirationCarte`)
 standardize_date_columns = ['DateNaissance', 'DernierAchat', 'DateExpirationCarte']
 for col in standardize_date_columns:
-    if col in df.columns:
-        df[col] = df[col].astype(str).apply(standardise_date)
+    if col in dataset.columns:
+        dataset[col] = dataset[col].astype(str).apply(standardise_date)
 
-sys.stderr.write("✅ Standardisation des dates effectuée.\n")
+sys.stderr.write("Standardisation des dates effectuée.\n")
 
 # Standardisation des types des colonnes datetime
 date_columns = ['DateNaissance', 'DernierAchat', 'DateExpirationCarte']
 for col in date_columns:
-    if col in df.columns:
-        df[col] = pd.to_datetime(df[col], errors='coerce')  # Convertir en datetime64[ns], valeurs erronées mises à NaT
+    if col in dataset.columns:
+        dataset[col] = pd.to_datetime(dataset[col], errors='coerce')  # Convertir en datetime64[ns], valeurs erronées mises à NaT
 
-sys.stderr.write("✅ Standardisation des dates effectuée.\n")
+sys.stderr.write("Standardisation des dates effectuée.\n")
 
 # Conversion des colonnes numériques (float et int)
 numeric_columns = ['MontantTotalAchats', 'SoldeCompte', 'PanierMoyen', 'MontantTotalRemboursé', 'NombreAchats']
 for col in numeric_columns:
-    if col in df.columns:
-        df[col] = pd.to_numeric(df[col], errors='coerce')  # Convertir en float ou int, erreurs mises à NaN
+    if col in dataset.columns:
+        dataset[col] = pd.to_numeric(dataset[col], errors='coerce')  # Convertir en float ou int, erreurs mises à NaN
 
-sys.stderr.write("✅ Standardisation des nombres effectuée.\n")
+sys.stderr.write("Standardisation des nombres effectuée.\n")
 
 # Conversion des colonnes texte
 text_columns = ['ClientID', 'Nom', 'Prénom', 'Email', 'Adresse', 'Pays', 'Ville', 'ProduitPréféré']
 for col in text_columns:
-    if col in df.columns:
-        df[col] = df[col].astype(str).fillna("Inconnu")  # Convertir en string
+    if col in dataset.columns:
+        dataset[col] = dataset[col].astype(str).fillna("Inconnu")  # Convertir en string
 
-sys.stderr.write("✅ Standardisation des colonnes texte effectuée.\n")
+sys.stderr.write("Standardisation des colonnes texte effectuée.\n")
 
 # Export the cleaned data to stdout
-df.to_csv(sys.stdout, index=False)
+dataset.to_csv(sys.stdout, index=False)
