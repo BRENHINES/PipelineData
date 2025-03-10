@@ -49,8 +49,7 @@ The project structure is as follows:
 │── 📂 data                    # Raw and processed data files
 │──── 📂 processed                 # Processed data files
 │──── 📂 raw                       # Raw data files
-│── 📂 models                  # Python models if necessary (to ignore in this case)
-│── 📂 tests                   # Test files
+│── 📂 models                  # Python models if necessary (to ignore in this case with the scripts)
 │── 📜 Main.ipynb              # Python scripts for automation in Jupyter Notebook
 │── 📜 requirements.txt        # Dependencies
 │── 📜 README.md               # Documentation (this file)
