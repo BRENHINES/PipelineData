@@ -25,11 +25,13 @@ def pseudonymize_credit_card(card_number):
         return f"**** **** **** {card_number[-4:]}"
     return "**** **** **** ****"
 
+"""
 def pseudonymize_credit_card_expiration(expiration_date):
-    """Pseudonymiser la date d'expiration d'une carte bancaire en gardant les 2 derniers chiffres"""
+    ""Pseudonymiser la date d'expiration d'une carte bancaire en gardant les 2 derniers chiffres""
     if pd.notna(expiration_date) and len(expiration_date) >= 2:
         return expiration_date[-2:]
     return "**"
+"""
 
 def pseudonymize_postal_code(postal_code):
     """Pseudonymiser un code postal en gardant les 2 premiers chiffres et masquant le reste"""
