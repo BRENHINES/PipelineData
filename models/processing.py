@@ -47,7 +47,7 @@ dataset['Téléphone'] = "masked"
 
 # Pseudonymisation des identifiants
 dataset['NuméroCarteCrédit'] = dataset['NuméroCarteCrédit'].astype(str).apply(pseudonymize_credit_card)
-dataset['DateExpirationCarte'] = dataset['DateExpirationCarte'].astype(str).apply(pseudonymize_credit_card_expiration)
+#dataset['DateExpirationCarte'] = dataset['DateExpirationCarte'].astype(str).apply(pseudonymize_credit_card_expiration)
 dataset['CodePostal'] = dataset['CodePostal'].astype(str).apply(pseudonymize_postal_code)
 
 # Aggregation des données d'age
